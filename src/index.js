@@ -20,9 +20,11 @@ function renderImage() {
 }
 
 function searchImg(e) {
+  ref.page = 1;
+  ref.search = '';
   galleryEl.innerHTML = '';
   btnLoadMore.classList.remove('is-hidden');
-  ref.page += 1;
+
   ref.search = e.target.value;
   renderImage();
 }
