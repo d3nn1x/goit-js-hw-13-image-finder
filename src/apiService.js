@@ -7,7 +7,7 @@ const ref = {
 
   fetchApi(name) {
     return fetch(
-      `${ref.URL}/?image_type=photo&orientation=horizontal&q=${name}&page=${ref.page}&per_page=12&key=${ref.API_KEY}`,
+      `${this.URL}/?image_type=photo&orientation=horizontal&q=${name}&page=${this.page}&per_page=12&key=${this.API_KEY}`,
     ).then(res => res.json());
   },
 };

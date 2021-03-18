@@ -16,6 +16,14 @@ function renderImage() {
       return acc + photoCardTpl(item);
     }, '');
     galleryEl.insertAdjacentHTML('beforeend', dataEl);
+    if (data.hits.length < 12) {
+      btnLoadMore.classList.add('is-hidden');
+    }
+
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
   });
 }
 
@@ -23,6 +31,7 @@ function searchImg(e) {
   ref.page = 1;
   ref.search = '';
   galleryEl.innerHTML = '';
+
   btnLoadMore.classList.remove('is-hidden');
 
   ref.search = e.target.value;
